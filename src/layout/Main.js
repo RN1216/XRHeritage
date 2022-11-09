@@ -5,10 +5,10 @@ import Header from '../Sheard/Header/Header';
 
 const Main = () => {
     return (
-        <div>
-            <Header></Header>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div className='h-screen'>
+            <Header ></Header>
+            <Outlet ></Outlet>
+            <Footer ></Footer>
         </div>
     );
 };
