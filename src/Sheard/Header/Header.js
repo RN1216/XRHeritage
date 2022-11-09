@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../context/AuthProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -21,23 +23,39 @@ const Header = () => {
       <li className="font-semibold">
         <Link to="/blog">Bolg</Link>
       </li>
-      <li className="font-semibold">
-        <Link to="/register">Registration</Link>
-      </li>
-      
-      {
-          user?.email ?
-          <>
-          <span className="mx-2"> {user?.displayName} </span>
-          <li  className='font-semibold'><button onClick={handleLogOut}  className='btn-ghost'>  {" "}Sign Out</button></li>
-          </>
-           :
-           <>
-           <li className='font-semibold'><Link to='/register'>Sign Up</Link></li>
-           <li className='font-semibold'><Link to='/login'>Login</Link></li>
-           </>
-           
-        }
+
+      {user?.email ? (
+        <>
+         
+          <li className="font-semibold">
+            
+            <button onClick={handleLogOut} className="btn-ghost">
+              {" "}
+              Sign Out
+            </button>
+            <span className="mx-auto"> {user?.displayName} </span>
+          </li>
+        </>
+      ) : (
+        <>
+          <li className="font-semibold">
+            <Link to="/register">Sign Up</Link>
+          </li>
+          <li className="font-semibold">
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
+
+      {user?.photoURL ? (
+        <div className="avatar online">
+          <div className="w-10 rounded-full">
+            <img src={user?.photoURL} alt="" />
+          </div>
+        </div>
+      ) : (
+        <FontAwesomeIcon icon="fa-solid fa-User" />
+      )}
     </>
   );
   return (
