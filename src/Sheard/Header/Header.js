@@ -6,7 +6,7 @@ const Header = () => {
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/'>Services</Link></li>
-        <li className='font-semibold'><Link to='/'>Bolg</Link></li>
+        <li className='font-semibold'><Link to='/blog'>Bolg</Link></li>
 </>
     return (
         <div className="navbar bg-base-100 h-20  my-5">
