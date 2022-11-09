@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import loginImg from "../../assets/login.jpg";
@@ -6,6 +6,7 @@ import { AuthContext } from './../../context/AuthProvider';
 
 const Login = () => {
     const {loginUser}=useContext(AuthContext)
+    const [error,setError]= useState('');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -25,12 +26,18 @@ const Login = () => {
       console.log(currentUser);
    
 
-       navigate(from,{replace:true})
+      setError('');
+      navigate(from,{replace: true});
+      form.reset()
       
      // 
 
     })
-    .catch(err=>console.error(err))
+    .catch(error=>{
+        
+        setError(error.message);
+      })
+  
   };
     return (
         <div className="hero my-20">
@@ -72,9 +79,10 @@ const Login = () => {
               ></input>
             </div>
           </form>
-          <p className=" w-full text-center pb-5 ">
+          <p className=' text-error'>{error}</p>
+          <p className="r-5 w-full text-center pb-5 ">
             New to XR
-            <Link className="text-orange-600 " to="/signUp">
+            <Link className="text-error  " to="/signUp">
               Sign Up
             </Link>
           </p>
