@@ -68,7 +68,7 @@ const Register = () => {
     <div className="hero my-20">
       <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left  p-5">
-          <img className="w-full mx-auto my-5" src={regImg} alt=""></img>
+          <img className="w-full mb-20 my-5" src={regImg} alt=""></img>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-5xl font-bold text-center">Sign Up now!</h1>
@@ -121,20 +121,24 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="form-control mt-6">
-              <input
-                type="submit"
-                value="login"
-                className="btn btn-error"
-              ></input>
-            </div>
-            <div className="form-control mt-6">
-              <input
-                onClick={handleGoogleSignIn}
-                type="submit"
-                value="Login With Google"
-                className="btn btn-primary"
-              ></input>
+
+            <div className="flex flex-col w-full border-opacity-50">
+              <div className="form-control mt-6">
+                <input
+                  type="submit"
+                  value="login"
+                  className="btn btn-error"
+                ></input>
+              </div>
+              <div className="divider">OR</div>
+              <div className="form-control ">
+                <input
+                  onClick={handleGoogleSignIn}
+                  type="submit"
+                  value="Login With Google"
+                  className="text-md btn btn-outline"
+                ></input>
+              </div>
             </div>
           </form>
           <p className="text-danger">{error}</p>
