@@ -14,6 +14,7 @@ const SingleServicePreview = () => {
 
         const review ={
             service:_id,
+            img,
             serviceName:title,
             price,
             email,

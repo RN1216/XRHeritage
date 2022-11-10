@@ -4,6 +4,7 @@ import AllService from "../../Pages/AllService/AllService";
 import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
+import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
 import MyReviews from "../../Pages/Reviews/MyReviews/MyReviews";
 import SingleServicePreview from "../../Pages/SingleServicePreview/SingleServicePreview";
 import Register from "../../Register/Register";
@@ -40,7 +41,7 @@ const router= createBrowserRouter([
             },
             {
                 path:'/reviews',
-                element:<MyReviews></MyReviews>
+                element:<AllReviews></AllReviews>
             }
             
         ]
