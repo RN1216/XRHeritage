@@ -8,6 +8,8 @@ import AllReviews from "../../Pages/Reviews/AllReviews/AllReviews";
 import MyReviews from "../../Pages/Reviews/MyReviews/MyReviews";
 import SingleServicePreview from "../../Pages/SingleServicePreview/SingleServicePreview";
 import Register from "../../Register/Register";
+import PrivateRoutes from './../PrivateRoutes/PrivateRoutes';
+import ErrorPage from './../../Sheard/ErrorPage/ErrorPage';
 
 const router= createBrowserRouter([
     {
@@ -32,17 +34,26 @@ const router= createBrowserRouter([
             },
             {
                 path:'/singleservicepreview/:id',
-                element:<SingleServicePreview></SingleServicePreview>,
+                element:<PrivateRoutes><SingleServicePreview></SingleServicePreview></PrivateRoutes>,
                 loader:({params})=>fetch(`http://localhost:5000/servises/${params.id}`)
             },
             {
                 path:'/allservices',
-                element:<AllService></AllService>
+                element:<PrivateRoutes><AllService></AllService></PrivateRoutes>
             },
             {
                 path:'/reviews',
-                element:<AllReviews></AllReviews>
+                element:<PrivateRoutes><AllReviews></AllReviews></PrivateRoutes>
+            },
+            {
+                path:'/myallreview',
+                element:<PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
+            },
+            {
+                path:'*',
+                element:<ErrorPage></ErrorPage>
             }
+        
             
         ]
     }

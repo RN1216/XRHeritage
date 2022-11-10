@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SingleReview = ({review,handleDeletReview}) => {
-    const {_id,email, title, img, price,comment} = review;
+    const {_id,email, serviceName, img, price,comment} = review;
 
     return (
         <div className="overflow-x-auto w-full">
@@ -46,7 +46,7 @@ const SingleReview = ({review,handleDeletReview}) => {
           </div>
         </td>
         <td>
-          {title}
+          {serviceName}
           
         </td>
         <td>{price}</td>

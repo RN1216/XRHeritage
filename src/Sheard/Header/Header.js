@@ -23,7 +23,7 @@ const Header = () => {
         <Link to="/reviews">All Reviews</Link>
       </li>
       <li className="font-semibold">
-        <Link to="/reviews">My Reviews</Link>
+        <Link to="/myallreview">My Reviews</Link>
       </li>
       <li className="font-semibold">
         <Link to="/blog">Bolg</Link>

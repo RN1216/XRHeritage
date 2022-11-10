@@ -12,7 +12,7 @@ const MyReviews = () => {
         .then(res =>res.json())
         .then(data=>setReviews(data))
     },[user?.email])
-    const handleDeletOrder=id=>{
+    const handleDeletReview=id=>{
         const proceed = window.confirm('Are you sure ,you want to cancle this Order?');
         if(proceed){
           fetch(`http://localhost:5000/reviews/${id}`,{
@@ -39,10 +39,10 @@ const MyReviews = () => {
           <table className="table overflow-x-auto ">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
-                <th>Favorite Color</th>
+              <th>Customer Email</th>
+        <th>Services Title</th>
+        <th>Price</th>
+        <th>Comments</th>
               </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@ const MyReviews = () => {
                 <MySingleReview 
                 key={review._id} 
                 review={review}
-                handleDeletOrder={handleDeletOrder}
+                handleDeletReview={handleDeletReview}
                 >
                   
                 </MySingleReview>
