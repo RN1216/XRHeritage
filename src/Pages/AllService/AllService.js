@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ServiseCard from './ServiseCard';
+import ServiseCard from './../Servises/ServiseCard';
 
-const Servises = () => {
+const AllService = () => {
     const [services , setServices] = useState([]);
-    const [size, setSize] = useState(3)
-
     useEffect(()=>{
-        fetch(`http://localhost:5000/servises?size=${size}`)
+        fetch(`http://localhost:5000/servises`)
         .then(res=>res.json())
         .then(data=>{setServices(data)})
-    },[size])
+    },[])
     
     return (
         <div className='text-center'>
@@ -38,4 +36,4 @@ const Servises = () => {
     );
 };
 
-export default Servises;
+export default AllService;

@@ -11,13 +11,13 @@ const ServiseCard = ({service}) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p className="text-left text-xl font-bold text-orange-600">
-          Price: {price}
+        <p className="text-left text-lg font-bold text-orange-600">
+          Price: ${price}
         </p>
         <p className="text-left  font-bold text-black-600">
-          {description}
+          {description.slice(0,100)+'...'}
         </p>
-        <div className="flex justify-around my-auto">
+        <div className="flex justify-between my-auto">
         <div className="flex justify-start my-auto">
             <FaStar className="text-warning"></FaStar>
             <FaStar className="text-warning "></FaStar>
@@ -26,7 +26,7 @@ const ServiseCard = ({service}) => {
           </div>
         <div className="flex">
         <Link to={`/singleservicepreview/${_id}`}> 
-         <button className="btn btn-outline btn-error">go</button>
+         <button className="btn btn-outline btn-error">Details</button>
          </Link>
         </div>
         </div>

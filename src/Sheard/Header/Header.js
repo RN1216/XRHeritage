@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../context/AuthProvider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import {FaUserAlt} from 'react-icons/fa'
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -18,7 +17,7 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="font-semibold">
-        <Link to="/">Services</Link>
+        <Link to="/allservices">Services</Link>
       </li>
       <li className="font-semibold">
         <Link to="/blog">Bolg</Link>
@@ -54,7 +53,7 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <FontAwesomeIcon icon="fa-solid fa-User" />
+        <FaUserAlt className="text-warning"></FaUserAlt>
       )}
     </>
   );
