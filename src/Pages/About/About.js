@@ -3,7 +3,7 @@ import about from '../../assets/About.png'
 
 const About = () => {
     return (
-        <div className="hero my-20">
+        <div className="hero ">
         <div className="hero-content flex-col lg:flex-row">
           <div className='relative w-1/2 pl-5'>
          <img src={about} alt='about-img'></img>
