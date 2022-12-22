@@ -8,14 +8,14 @@ const MyReviews = () => {
     
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://xr-heritage-server.vercel.app/reviews?email=${user?.email}`)
         .then(res =>res.json())
         .then(data=>setReviews(data))
     },[user?.email])
     const handleDeletReview=id=>{
         const proceed = window.confirm('Are you sure ,you want to cancle this Order?');
         if(proceed){
-          fetch(`http://localhost:5000/reviews/${id}`,{
+          fetch(`https://xr-heritage-server.vercel.app/reviews/${id}`,{
             method:'DELETE'
           })
           .then(res=>res.json())

@@ -35,7 +35,7 @@ const router= createBrowserRouter([
             {
                 path:'/singleservicepreview/:id',
                 element:<PrivateRoutes><SingleServicePreview></SingleServicePreview></PrivateRoutes>,
-                loader:({params})=>fetch(`http://localhost:5000/servises/${params.id}`)
+                loader:({params})=>fetch(`https://xr-heritage-server.vercel.app/servises/${params.id}`)
             },
             {
                 path:'/allservices',

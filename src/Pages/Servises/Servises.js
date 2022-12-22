@@ -7,7 +7,7 @@ const Servises = () => {
     const [size, setSize] = useState(3)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/servises?size=${size}`)
+        fetch(`https://xr-heritage-server.vercel.app/servises?size=${size}`)
         .then(res=>res.json())
         .then(data=>{setServices(data)})
     },[size])

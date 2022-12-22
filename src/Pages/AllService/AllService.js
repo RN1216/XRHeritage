@@ -5,7 +5,7 @@ import ServiseCard from './../Servises/ServiseCard';
 const AllService = () => {
     const [services , setServices] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/servises`)
+        fetch(`https://xr-heritage-server.vercel.app/servises`)
         .then(res=>res.json())
         .then(data=>{setServices(data)})
     },[])
