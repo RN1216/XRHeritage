@@ -26,7 +26,7 @@ const Header = () => {
         <Link to="/myallreview">My Reviews</Link>
       </li>
       <li className="font-semibold">
-        <Link to="/blog">Bolg</Link>
+        <Link to="/about">About</Link>
       </li>
 
       {user?.email ? (
@@ -54,12 +54,12 @@ const Header = () => {
 
       {user?.photoURL ? (
         <div className="avatar online">
-          <div className="w-10 rounded-full">
+          <div className="h-10 w-10 rounded-full">
             <img src={user?.photoURL} alt="" />
           </div>
         </div>
       ) : (
-        <FaUserAlt className="text-warning"></FaUserAlt>
+        <FaUserAlt className="my-5 w-10 text-black"></FaUserAlt>
       )}
     </>
   );
@@ -91,16 +91,15 @@ const Header = () => {
           </ul>
         </div>
         <div className=" text-xl my-5 pl-10">
-          <img className="" src={logo} alt="" />
-          <p className="font-bold ">Heritage</p>
+         
+          <p className="font-bold text-blue-400">shifty</p>
+          <p className="font-bold ">WORKERS</p>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
-      <div className="navbar-end">
-        <Link className="text-md btn btn-outline">Order NOW</Link>
-      </div>
+      
     </div>
   );
 };

@@ -10,6 +10,7 @@ import SingleServicePreview from "../../Pages/SingleServicePreview/SingleService
 import Register from "../../Register/Register";
 import PrivateRoutes from './../PrivateRoutes/PrivateRoutes';
 import ErrorPage from './../../Sheard/ErrorPage/ErrorPage';
+import About from "../../Pages/About/About";
 
 const router= createBrowserRouter([
     {
@@ -21,8 +22,8 @@ const router= createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path:'/blog',
-                element:<Blog></Blog>
+                path:'/about',
+                element:<About></About>
             },
             {
                 path:'/login',
